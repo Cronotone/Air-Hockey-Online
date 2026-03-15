@@ -1,0 +1,93 @@
+# 3D Air Hockey Finals
+
+Fast-paced 3D air hockey built with vanilla JavaScript + Three.js.
+
+## Features
+
+- 3D air hockey table, stadium backdrop, lighting, and shadows
+- 1P vs AI mode (mouse/touch control)
+- AI vs AI mode with pre-match betting
+- Mobile 2-player mode (split-screen touch: top/bottom)
+- Instant replay after goals (left click/tap to skip)
+- Pause menu + options
+- Random powerups with live effects
+  - `2X` Size Boost (8s)
+  - `G/2` Goal Shield (8s, goal shrinks to half width visually + physically)
+  - `BL` Blind (3s, near-black screen when applied to player)
+- Confetti and goal banners
+
+## Controls
+
+### Desktop
+
+- Move striker: mouse
+- Pause/Resume: `Space`, `P`, or `Esc`
+- Skip replay: left click
+
+### Mobile / Tablet
+
+- Move striker: touch drag
+- 2P mode: bottom player uses lower half, top player uses upper half
+- Skip replay: tap
+
+## Game Modes
+
+- **Start 1P vs AI**
+- **Watch AI vs AI** (includes betting prompt)
+- **Start Mobile 2P** (enabled on touch devices)
+
+## Powerup Rules
+
+- Only one pickup is active at a time
+- Powerups rotate in a cycle (no same-type spam)
+- Spawn timing is delayed between pickups
+- In 1P vs AI, spawn logic is biased so player gets more opportunities
+
+## Run Locally
+
+You need a local server (opening `index.html` directly is not recommended for module imports).
+
+### Option 1: Python
+
+```bash
+python -m http.server 5500
+```
+
+### Option 2: Node
+
+```bash
+npx serve -l 5500
+```
+
+Then open:
+
+- `http://localhost:5500` (same PC)
+- `http://<your-local-ip>:5500` (phone/tablet on same Wi-Fi)
+
+## Tech Stack
+
+- JavaScript (ES Modules)
+- Three.js (CDN import)
+- HTML/CSS
+
+## Project Structure
+
+```text
+src/
+  ai/
+  audio/
+  camera/
+  core/
+  entities/
+  game/
+  input/
+  ui/
+  main.js
+index.html
+styles.css
+```
+
+## Notes
+
+- Designed to run on desktop and modern mobile browsers.
+- Performance and visual style are tuned for mid-range hardware.
